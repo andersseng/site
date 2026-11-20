@@ -2,6 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1R449MXHCG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1R449MXHCG');</script>
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dr. Anderssen Gomes</title>
 <meta name="description" content="Dr. Anderssen Gomes, médico oftalmologista em Porto Alegre. Cirurgia refrativa a laser, troca de cristalino e catarata. Liberdade visual com planejamento individual.">
@@ -372,8 +376,7 @@ footer .etica{grid-column:1/-1;border-top:1px solid #33251b;padding-top:22px;fon
   const fallback = "https://www.instagram.com/anderssengomes.oftalmo/";
   for (const a of document.querySelectorAll('.wpp')) {
     const msg = a.dataset.msg || "Olá! Vim pelo site.";
-    a.href = WHATSAPP ? "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg) : fallback;
-    a.target = "_blank"; a.rel = "noopener";
+    a.href = WHATSAPP ? "whatsapp.html?msg=" + encodeURIComponent(msg) : fallback;
   }
 }
 </script>
