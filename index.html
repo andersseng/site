@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr. Anderssen Gomes</title>
+<meta name="description" content="Dr. Anderssen Gomes, médico oftalmologista em Porto Alegre. Cirurgia refrativa a laser, troca de cristalino e catarata. Liberdade visual com planejamento individual.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: direto, confiante, humano; médico de autoridade que também vive o esporte
+IDEA: a lente — o mundo fora dela embaçado, dentro dela nítido e aberto
+PICTURE: amanhecer em camadas (lago, morros, estrada) com uma lente circular que deixa a paisagem nítida
+COLOUR and TYPE: marrom profundo dominante, céu claro de apoio, laranja-nascer como acento; Manrope
+LAYOUT: hero de cena larga, faixas cheias alternando branco e marrom, rodapé ético completo
+*/
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#16100c);--soft:light-dark(#f6f1ec,#211812);--ink:light-dark(#22170f,#f3ece6);--mute:light-dark(#6b5a4d,#bfae9f);
+--brown:#2a1b12;--brown2:#3b281b;--sky:#9fd0ee;--sun:#ff8a4c;--line:light-dark(#e6dcd2,#33261c)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+h1,h2,h3{line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(36px,5.4vw,58px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(30px,3.8vw,44px);font-weight:800;letter-spacing:-.015em}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+.lead{font-size:clamp(17px,1.6vw,19px);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.btn.pri{background:var(--sun);color:#24150b}
+.btn.ghost{border:1.5px solid currentColor}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--brown) 94%,transparent);backdrop-filter:blur(8px);color:#f6eee7}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:17px}
+.logo img{height:46px;width:auto;display:block}
+footer .flogo{height:52px;width:auto;display:block;margin-bottom:14px}
+.links{display:flex;gap:22px;flex-wrap:wrap;font-size:15px;font-weight:600}
+.links a{text-decoration:none;opacity:.85}.links a:hover{opacity:1}
+@media(max-width:860px){.links{display:none}}
+
+/* HERO */
+.hero{background:var(--brown);color:#f6eee7;padding-bottom:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.hero .txt{display:grid;gap:20px;max-width:760px}
+.hero .lead{color:#e3d6ca}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.anchor{font-size:15px;color:var(--sky);font-weight:600}
+.scene{position:relative;height:clamp(300px,38vw,470px);border-radius:28px 28px 0 0;overflow:hidden}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+@media(prefers-reduced-motion:no-preference){.lensg{animation:drift 14s ease-in-out infinite alternate}}
+@keyframes drift{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+
+/* MANIFESTO */
+.mani .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.mani .big{font-size:clamp(26px,3vw,36px);font-weight:700;line-height:1.2;text-wrap:balance}
+.mani .big em{font-style:normal;color:var(--sun)}
+.mani .col{display:grid;gap:16px;color:var(--mute)}
+@media(max-width:760px){.mani .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* PROCEDIMENTOS */
+.proc{background:var(--soft)}
+.head{display:grid;gap:14px;margin-bottom:40px;max-width:720px}
+.head p{color:var(--mute)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:14px;grid-template-rows:auto auto auto 1fr auto}
+.card .ico{width:54px;height:54px;border-radius:16px;background:var(--brown);display:grid;place-items:center}
+.card .ico svg{width:30px;height:30px}
+.card .tag{font-size:14px;font-weight:700;color:var(--sun)}
+.card p{color:var(--mute)}
+.card ul{margin:0;padding-left:18px;color:var(--mute);font-size:15.5px;display:grid;gap:6px}
+.card a.more{font-weight:700;text-decoration:none;color:var(--ink);display:inline-flex;gap:8px;align-items:center;min-height:44px}
+.card a.more span{color:var(--sun)}
+@media(max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}}
+
+/* SOBRE */
+.sobre{background:var(--brown);color:#f6eee7}
+.sobre .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.sobre p{color:#e3d6ca}
+.sobre .txt{display:grid;gap:18px}
+.port{aspect-ratio:4/5;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(160deg,#4a3324,#24170f)}
+.port img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.mods{display:flex;flex-wrap:wrap;gap:10px}
+.mods span{border:1px solid #6a4d38;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+.cred{font-size:15px;color:var(--sky)!important;font-weight:600}
+@media(max-width:820px){.sobre .wrap{grid-template-columns:minmax(0,1fr)}.port{aspect-ratio:4/5;max-width:420px}}
+
+/* JORNADA */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:10px;align-content:start;padding-top:22px;border-top:3px solid var(--line);position:relative}
+.steps li::before{content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--sun);color:#24150b;font-weight:800;display:grid;place-items:center;font-size:15px}
+.steps li p{color:var(--mute);font-size:15.5px}
+.steps h3{font-size:18px}
+@media(max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}}
+@media(max-width:560px){.steps{grid-template-columns:minmax(0,1fr)}}
+.fora{margin-top:48px;background:var(--soft);border-radius:22px;padding:clamp(22px,3vw,34px);display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fora p{color:var(--mute);max-width:62ch}
+.fora h3{margin-bottom:6px}
+
+/* LOCAIS */
+.locs{background:var(--soft)}
+.lgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.loc{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:10px}
+.loc .k{font-size:14px;font-weight:700;color:var(--sun)}
+.loc p{color:var(--mute)}
+.loc a{font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:760px){.lgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* FAQ */
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-size:17.5px;position:relative;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:26px;color:var(--sun);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 20px;color:var(--mute);max-width:64ch}
+@media(max-width:820px){.faq .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* CTA FINAL */
+.final{background:var(--sun);color:#24150b;text-align:center}
+.final .wrap{display:grid;gap:20px;justify-items:center;max-width:760px}
+.final .btn.pri{background:var(--brown);color:#f6eee7}
+
+/* FOOTER */
+footer{background:#140d09;color:#cdbcae;font-size:14.5px}
+footer .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+footer strong{color:#f6eee7;display:block;margin-bottom:6px;font-size:15.5px}
+footer .etica{grid-column:1/-1;border-top:1px solid #33251b;padding-top:22px;font-size:13.5px;line-height:1.6;color:#a8968a}
+@media(max-width:760px){footer .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* WHATSAPP FLUTUANTE */
+.float{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.float svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#inicio"><img src="logo-branco.png" alt="Dr. Anderssen Gomes, Oftalmologista" width="245" height="60"></a>
+    <div class="links">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#jornada">Como funciona</a>
+      <a href="#locais">Onde atendo</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+    <a class="btn pri wpp" data-msg="Olá! Vim pelo site e quero agendar uma consulta com o Dr. Anderssen." href="#">
+      <svg><use href="#wa"/></svg>Agendar consulta
+    </a>
+  </div>
+</nav>
+
+<header class="band hero" id="inicio">
+  <div class="wrap">
+    <div class="txt">
+      <p class="anchor">Cirurgia refrativa · Troca de cristalino · Catarata</p>
+      <h1>Acordar e enxergar. Sem procurar os óculos.</h1>
+      <p class="lead">Sou cirurgião oftalmologista em Porto Alegre e opero com um objetivo: eliminar a sua dependência dos óculos. Não é só corrigir grau. É mudar a forma como você vive cada manhã, cada treino, cada viagem.</p>
+      <div class="cta">
+        <a class="btn pri wpp" data-msg="Olá! Vim pelo site e quero agendar uma consulta para saber se posso me livrar dos óculos." href="#"><svg><use href="#wa"/></svg>Quero minha consulta</a>
+        <a class="btn ghost" href="#tratamentos">Conhecer os tratamentos</a>
+      </div>
+    </div>
+    <div class="scene" role="img" aria-label="Paisagem ao amanhecer, embaçada nas bordas e nítida dentro de uma lente circular">
+      <svg viewBox="0 0 1200 470" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fb4e0"/><stop offset=".55" stop-color="#cfe8f6"/><stop offset=".8" stop-color="#ffd2ae"/><stop offset="1" stop-color="#ffb07a"/></linearGradient>
+          <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc4e6"/><stop offset="1" stop-color="#3c7ca8"/></linearGradient>
+          <radialGradient id="sunG"><stop offset="0" stop-color="#fff4e2"/><stop offset=".45" stop-color="#ffc48f"/><stop offset="1" stop-color="#ff8a4c" stop-opacity="0"/></radialGradient>
+          <filter id="blur"><feGaussianBlur stdDeviation="9"/></filter>
+          <clipPath id="lens"><circle cx="600" cy="250" r="190"/></clipPath>
+          <g id="land">
+            <rect width="1200" height="470" fill="url(#sky)"/>
+            <circle cx="760" cy="250" r="130" fill="url(#sunG)"/>
+            <circle cx="760" cy="250" r="34" fill="#fff6ea"/>
+            <path d="M0 270 L140 200 L260 245 L400 170 L540 240 L660 190 L800 250 L930 180 L1060 235 L1200 200 V320 H0Z" fill="#7a8fa6" opacity=".55"/>
+            <path d="M0 300 C160 250 300 285 450 260 S760 240 900 270 1100 255 1200 265 V340 H0Z" fill="#4f6a55"/>
+            <path d="M0 300 C160 250 300 285 450 260 S760 240 900 270 1100 255 1200 265 V272 C1100 262 1000 278 900 278 S600 250 450 268 160 262 0 308Z" fill="#7d9a6e"/>
+            <rect y="330" width="1200" height="140" fill="url(#lake)"/>
+            <path d="M700 340 h120 M680 362 h160 M710 384 h100 M690 408 h140" stroke="#ffe0c4" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+            <path d="M560 470 C590 410 610 360 600 330 L620 330 C640 370 660 420 720 470Z" fill="#c7a585" opacity=".9"/>
+            <g fill="#2a1b12">
+              <circle cx="608" cy="292" r="7"/>
+              <path d="M603 300 l10 0 l4 18 l10 10 l-4 4 l-12 -10 l-6 14 l-6 -2 l4 -18 l-8 8 l-4 -4Z"/>
+            </g>
+            <g fill="#2a1b12" opacity=".75"><path d="M340 352 q8 -6 16 0 q8 6 16 0" stroke="#2a1b12" stroke-width="3" fill="none"/><circle cx="335" cy="350" r="4"/></g>
+          </g>
+        </defs>
+        <use href="#land" filter="url(#blur)"/>
+        <rect width="1200" height="470" fill="#2a1b12" opacity=".28"/>
+        <g class="lensg">
+          <g clip-path="url(#lens)"><use href="#land"/></g>
+          <circle cx="600" cy="250" r="190" fill="none" stroke="#fff" stroke-width="3" opacity=".9"/>
+          <circle cx="600" cy="250" r="204" fill="none" stroke="#ff8a4c" stroke-width="2" opacity=".7"/>
+          <path d="M470 140 a190 190 0 0 1 120 -78" stroke="#fff" stroke-width="8" stroke-linecap="round" fill="none" opacity=".5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="band mani">
+  <div class="wrap">
+    <p class="big">Primeiro você vence a limitação. <em>Depois descobre a liberdade.</em></p>
+    <div class="col">
+      <p>Muita gente acha que tirar os óculos é só "fazer o laser". Não é. Duas pessoas com o mesmo grau podem precisar de caminhos completamente diferentes.</p>
+      <p>Por isso nada aqui é padronizado. Defino a estratégia pela anatomia do seu olho, pela sua rotina, pelo que você precisa enxergar e pelo que você espera da sua visão. Cada paciente é único, e o plano também.</p>
+      <p>Essa resposta só existe depois de uma consulta completa e individual.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band proc" id="tratamentos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Um caminho para cada fase da vida</h2>
+      <p>A indicação de cada procedimento é feita apenas em consulta, depois de exames específicos.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#9fd0ee" stroke-width="2"><path d="M3 16c4-7 22-7 26 0-4 7-22 7-26 0Z"/><circle cx="16" cy="16" r="4" fill="#9fd0ee"/><path d="M16 2v6M16 24v6" stroke="#ff8a4c"/></svg></div>
+        <span class="tag">Em geral, até cerca de 50 anos</span>
+        <h3>Laser personalizado (LASIK e PRK)</h3>
+        <p>Cirurgia refrativa com laser de alta precisão na córnea, para quem convive com miopia, astigmatismo ou hipermetropia e quer viver sem óculos e sem lente.</p>
+        <ul>
+          <li>Os dois olhos na mesma sessão</li>
+          <li>LASIK ou PRK definido pela espessura e curvatura da sua córnea</li>
+          <li>Retorno às atividades em geral entre 5 e 7 dias</li>
+        </ul>
+        <a class="more wpp" data-msg="Olá! Vim pelo site e quero saber sobre a cirurgia a laser para tirar os óculos." href="#">Quero saber se é para mim <span>→</span></a>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#9fd0ee" stroke-width="2"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="7" ry="5" fill="#9fd0ee" stroke="none"/><path d="M6 16h20" stroke="#ff8a4c"/></svg></div>
+        <span class="tag">Em geral, a partir de 50 a 55 anos</span>
+        <h3>Troca de cristalino</h3>
+        <p>Para quem chegou à vista cansada, usa óculos multifocais ou depende de óculos para perto e para longe. Uma lente permanente substitui o cristalino.</p>
+        <ul>
+          <li>Um olho por vez, com intervalo de 5 a 7 dias</li>
+          <li>Sedação e colírio anestésico</li>
+          <li>Sem repouso absoluto</li>
+        </ul>
+        <a class="more wpp" data-msg="Olá! Vim pelo site e quero saber sobre a troca de cristalino." href="#">Quero saber se é para mim <span>→</span></a>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="#9fd0ee" stroke-width="2"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="6" fill="#9fd0ee" opacity=".5"/><path d="M10 10l12 12" stroke="#ff8a4c"/></svg></div>
+        <span class="tag">Quando a visão vai ficando opaca</span>
+        <h3>Catarata</h3>
+        <p>Cirurgia que remove o cristalino opaco e implanta uma lente intraocular, escolhida de acordo com o seu olho e a sua rotina.</p>
+        <ul>
+          <li>Um olho por vez</li>
+          <li>Lente intraocular indicada caso a caso</li>
+          <li>Acompanhamento próximo no pós-operatório</li>
+        </ul>
+        <a class="more wpp" data-msg="Olá! Vim pelo site e quero saber sobre a cirurgia de catarata." href="#">Quero saber se é para mim <span>→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band sobre" id="sobre">
+  <div class="wrap">
+    <div class="port"><img src="dr-anderssen.jpg" alt="Dr. Anderssen Gomes, médico oftalmologista" width="785" height="1000" loading="lazy"></div>
+    <div class="txt">
+      <h2>Cirurgião de dia. Atleta de endurance sempre.</h2>
+      <p>Sou o Dr. Anderssen Gomes, médico oftalmologista dedicado à cirurgia refrativa, à troca de cristalino e à catarata. Atendo em Porto Alegre e, pela consulta online, recebo pacientes de toda a região e de todo o estado.</p>
+      <p>Fora do centro cirúrgico, nado, pedalo, corro e treino na academia. O triatlo me ensinou o mesmo que a cirurgia: preparo, precisão e respeito ao limite de cada corpo. É assim que conduzo cada paciente, do primeiro contato ao último retorno.</p>
+      <div class="mods"><span>Natação</span><span>Bike</span><span>Corrida</span><span>Academia</span></div>
+      <p class="cred">CRM 39878 · RQE 39726</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="jornada">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como funciona, do primeiro contato à sua nova rotina</h2>
+      <p>Você sabe exatamente o que vai acontecer em cada etapa.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Conversa pelo WhatsApp</h3><p>Minha equipe entende a sua rotina, há quanto tempo você usa óculos e o que mais incomoda.</p></li>
+      <li><h3>Consulta completa</h3><p>Cerca de 1 hora exclusiva com exames para verificar com segurança se você é candidato à cirurgia.</p></li>
+      <li><h3>Plano individual</h3><p>Se houver indicação, explico qual procedimento faz sentido para o seu olho e por quê.</p></li>
+      <li><h3>Cirurgia</h3><p>Realizada no Mirar Hospital de Olhos, em Porto Alegre, com estrutura dedicada à oftalmologia.</p></li>
+      <li><h3>Acompanhamento</h3><p>Retornos programados para acompanhar de perto a sua recuperação.</p></li>
+    </ol>
+    <div class="fora">
+      <div>
+        <h3>Mora fora de Porto Alegre?</h3>
+        <p>A primeira conversa pode ser uma consulta online. Depois organizamos a consulta presencial e, se indicada, a cirurgia em sequência, para você viajar o mínimo possível.</p>
+      </div>
+      <a class="btn pri wpp" data-msg="Olá! Moro fora de Porto Alegre e quero saber sobre a consulta online com o Dr. Anderssen." href="#"><svg><use href="#wa"/></svg>Falar com a equipe</a>
+    </div>
+  </div>
+</section>
+
+<section class="band locs" id="locais">
+  <div class="wrap">
+    <div class="head"><h2>Onde atendo</h2></div>
+    <div class="lgrid">
+      <div class="loc">
+        <span class="k">Consultas</span>
+        <h3>Retina Center</h3>
+        <p>R. Tobias da Silva, 120, sala 1401<br>Moinhos de Vento, Porto Alegre/RS</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=R.+Tobias+da+Silva,+120,+Moinhos+de+Vento,+Porto+Alegre">Ver no mapa →</a>
+      </div>
+      <div class="loc">
+        <span class="k">Cirurgias</span>
+        <h3>Mirar Hospital de Olhos</h3>
+        <p>R. Dr. Timóteo, 764<br>Floresta, Porto Alegre/RS</p>
+        <p>Estrutura hospitalar exclusiva para cirurgias oftalmológicas.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=R.+Dr.+Timóteo,+764,+Floresta,+Porto+Alegre">Ver no mapa →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band faq" id="duvidas">
+  <div class="wrap">
+    <div class="head">
+      <h2>Dúvidas frequentes</h2>
+      <p>Não encontrou a sua? Minha equipe responde pelo WhatsApp.</p>
+    </div>
+    <div>
+      <details><summary>Eu posso operar?</summary><p>Só é possível responder com segurança depois da consulta. Grau, idade, espessura e curvatura da córnea, saúde da retina e o seu estilo de vida entram nessa decisão. Indico cirurgia apenas quando acredito que é a melhor opção para você.</p></details>
+      <details><summary>Por que a consulta é tão importante?</summary><p>Porque é nela que tudo é decidido. São cerca de 1 hora exclusiva, consulta completa e a verificação da sua candidatura à cirurgia. É o momento de ter clareza, segurança e tirar todas as dúvidas.</p></details>
+      <details><summary>Uso lente de contato. Preciso fazer algo antes?</summary><p>Sim. Retire as lentes 3 dias antes da consulta, para que as medidas da córnea fiquem corretas. Antes da cirurgia, o prazo é de 4 dias.</p></details>
+      <details><summary>Preciso ir acompanhado?</summary><p>Na consulta para catarata ou troca de cristalino, sim. O exame dilata a pupila e a visão fica embaçada por algumas horas, então não dirija na volta.</p></details>
+      <details><summary>Qual a diferença entre o laser e a troca de cristalino?</summary><p>O laser atua na córnea e costuma ser indicado para pessoas mais jovens, com grau estável. A troca de cristalino substitui a lente natural do olho e costuma ser indicada a partir dos 50 a 55 anos, quando surge a vista cansada. A escolha é feita na consulta.</p></details>
+      <details><summary>Quanto tempo leva para voltar à rotina?</summary><p>Depende do procedimento e da sua recuperação. No laser, em geral entre 5 e 7 dias. Na troca de cristalino, não há repouso absoluto, mas é preciso evitar esforço e poeira por cerca de 15 dias. Você recebe todas as orientações por escrito.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band final">
+  <div class="wrap">
+    <h2>Quantas manhãs mais você quer começar procurando os óculos?</h2>
+    <p class="lead">O primeiro passo é uma consulta. Minha agenda de novos pacientes é limitada, então fale com a minha equipe e garanta o seu horário.</p>
+    <a class="btn pri wpp" data-msg="Olá! Vim pelo site e quero agendar minha consulta com o Dr. Anderssen." href="#"><svg><use href="#wa"/></svg>Agendar pelo WhatsApp</a>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <div><img class="flogo" src="logo-branco.png" alt="Dr. Anderssen Gomes, Oftalmologista" width="245" height="60" loading="lazy">CRM 39878 / RQE 39726</div>
+    <div><strong>Atendimento</strong>Retina Center · Moinhos de Vento<br>Mirar Hospital de Olhos · Floresta<br>Porto Alegre/RS</div>
+    <div><strong>Siga</strong><a href="https://www.instagram.com/anderssengomes.oftalmo/">@anderssengomes.oftalmo</a><br>A F Gomes · CNPJ 45.519.850/0001-39</div>
+    <p class="etica"><a href="politica-de-privacidade.html" style="color:#e3d6ca">Política de Privacidade</a><br>As informações deste site têm caráter educativo, em conformidade com o Código de Ética Médica e a Resolução CFM 2.336/2023. Não substituem a consulta. Cada pessoa é única, o tratamento é individualizado e a indicação de qualquer procedimento depende de avaliação médica presencial.</p>
+  </div>
+</footer>
+
+<a class="float wpp" data-msg="Olá! Vim pelo site e quero falar com a equipe do Dr. Anderssen." href="#" aria-label="Falar no WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
+
+<script>
+{
+  // Coloque aqui o número do WhatsApp da clínica (só números, com 55 + DDD). Ex.: "5551999999999"
+  const WHATSAPP = "5551995567707";
+  const fallback = "https://www.instagram.com/anderssengomes.oftalmo/";
+  for (const a of document.querySelectorAll('.wpp')) {
+    const msg = a.dataset.msg || "Olá! Vim pelo site.";
+    a.href = WHATSAPP ? "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg) : fallback;
+    a.target = "_blank"; a.rel = "noopener";
+  }
+}
+</script>
+</body>
+</html>
